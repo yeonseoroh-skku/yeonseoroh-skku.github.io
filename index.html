@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeonseoroh | Fashion Data Portfolio</title>
+    <style>
+        /* MODERN DARK THEME & GRADIENTS */
+        :root {
+            --bg-color: #0a0a0c;
+            --card-bg: #141418;
+            --accent-gradient: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 10%;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at 80% 20%, rgba(129, 140, 248, 0.08), transparent),
+                        radial-gradient(circle at 20% 80%, rgba(192, 132, 252, 0.08), transparent);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -3px;
+            line-height: 1;
+        }
+
+        .major-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #c084fc;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 120px 10%;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3.5rem;
+            letter-spacing: -1px;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            border-left: 2px solid #818cf8;
+            padding-left: 2rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            background: #1a1a20;
+            border-color: rgba(129, 140, 248, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .project-tag {
+            font-size: 0.7rem;
+            color: #818cf8;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: #141418;
+            padding: 1rem 1.8rem;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: #c084fc;
+            background: rgba(192, 132, 252, 0.05);
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: var(--accent-gradient);
+            padding: 5rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(129, 140, 248, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 2.5rem;
+            background: #fff;
+            color: #000;
+            padding: 1.2rem 3rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0 5%; }
+            section { padding: 80px 5%; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">YEON SEOROH.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <span class="major-badge">Art Student @ Sungkyunkwan University</span>
+        <h1>Yeonseoroh</h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px;">Blending artistic intuition with big data to shape the future of the fashion industry.</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>I am a creative researcher and art student at SKKU with a deep focus on Fashion Show production and industry analytics. I specialize in bridging the gap between high-fashion aesthetics and data-driven insights, ensuring that artistic vision is backed by market intelligence.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Selected Works</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="project-tag">Data Hub</span>
+                <h3>Fashion Industry Dashboard</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">An interactive Streamlit dashboard built to track global runway trends, sustainability metrics, and historical costume influences through quantitative analysis.</p>
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 0.8rem; border-bottom: 2px solid #818cf8;">DISCOVER PROJECT</a>
+            </div>
+            
+            <div class="project-card">
+                <span class="project-tag">Research</span>
+                <h3>Aesthetic DNA Analysis</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">A comparative study on Qing Dynasty costume symbolism and its modern reinterpretation in luxury haute couture collections.</p>
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 0.8rem; border-bottom: 2px solid #818cf8;">LEARN MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Tech & Creative Stack</h2>
+        <div class="skills-container">
+            <div class="skill-tag">Python (Streamlit)</div>
+            <div class="skill-tag">Big Data Visualization</div>
+            <div class="skill-tag">Fashion Trend Casting</div>
+            <div class="skill-tag">Historical Costume Research</div>
+            <div class="skill-tag">Marketing Psychology</div>
+            <div class="skill-tag">UX/UI Design</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <h2 style="margin-bottom: 1rem; color: #fff;">Build the Future</h2>
+            <p style="color: rgba(255,255,255,0.9);">Ready to collaborate on the next wave of fashion innovation?</p>
+            <a href="mailto:your-email@skku.edu" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Yeonseoroh. Built for Art & Big Data @ SKKU.
+    </footer>
+
+</body>
+</html>
