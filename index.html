@@ -3,297 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeonseoroh | Fashion Data Portfolio</title>
+    <title>Yeonseo Roh | Portfolio</title>
     <style>
-        /* MODERN DARK THEME & GRADIENTS */
-        :root {
-            --bg-color: #0a0a0c;
-            --card-bg: #141418;
-            --accent-gradient: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --font-family: 'Inter', -apple-system, sans-serif;
-        }
-
+        /* Modern & Clean Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
+        /* Smooth Scrolling Enabled */
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-family);
-            line-height: 1.6;
-            overflow-x: hidden;
+            color: #333;
+            line-height: 1.7;
+            background-color: #fcfcfd;
         }
 
-        /* Navigation */
-        nav {
+        /* Navigation Header */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 1px 10px rgba(0,0,0,0.02);
             position: fixed;
-            top: 0;
             width: 100%;
-            padding: 1.5rem 10%;
-            background: rgba(10, 10, 12, 0.8);
-            backdrop-filter: blur(12px);
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .logo {
-            font-weight: 900;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
-            display: flex;
             list-style: none;
-            gap: 2.5rem;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            color: #555;
             font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #fff;
+            color: #6c5ce7;
         }
 
-        /* Hero Section */
-        header {
-            height: 100vh;
+        /* Hero Section with Beautiful Modern Gradient */
+        .hero {
+            height: 75vh;
+            background: linear-gradient(135deg, #f6f8fd 0%, #e3e8f8 50%, #dbe3f9 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 10%;
-            background: radial-gradient(circle at 80% 20%, rgba(129, 140, 248, 0.08), transparent),
-                        radial-gradient(circle at 20% 80%, rgba(192, 132, 252, 0.08), transparent);
+            padding: 0 20px;
+            margin-top: 60px;
         }
 
-        h1 {
-            font-size: clamp(3rem, 10vw, 5rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            letter-spacing: -3px;
-            line-height: 1;
+        .hero h1 {
+            font-size: 46px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #5c6b73;
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        /* Section Global Styles */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        section h2 {
+            font-size: 30px;
+            color: #1a1a1a;
+            margin-bottom: 45px;
+            text-align: center;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+        }
+
+        /* About Me Section */
+        .about-box {
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #f1f2f6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-box p {
+            font-size: 16px;
+            color: #4a4a4a;
+            margin-bottom: 20px;
         }
 
         .major-badge {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.5rem 1.2rem;
-            border-radius: 100px;
-            font-size: 0.85rem;
+            display: inline-block;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #c084fc;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 120px 10%;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 3.5rem;
-            letter-spacing: -1px;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            border-left: 2px solid #818cf8;
-            padding-left: 2rem;
+            margin-bottom: 25px;
         }
 
         /* Projects Section */
-        .projects-grid {
+        .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
         }
 
         .project-card {
-            background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #f1f2f6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
-            transform: translateY(-12px);
-            background: #1a1a20;
-            border-color: rgba(129, 140, 248, 0.3);
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.08);
         }
 
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
+        .project-info {
+            padding: 35px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .project-tag {
-            font-size: 0.7rem;
-            color: #818cf8;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            display: block;
+        .project-info h3 {
+            font-size: 21px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .project-info p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .tag-group {
+            margin-top: auto;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f1f2f6;
+            color: #5c6b73;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-bottom: 6px;
         }
 
         /* Skills Section */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            justify-content: center;
+            gap: 15px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .skill-tag {
-            background: #141418;
-            padding: 1rem 1.8rem;
-            border-radius: 16px;
-            font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
+        .skill-badge {
+            background: #ffffff;
+            color: #1a1a1a;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            border: 1px solid #f1f2f6;
+            transition: all 0.3s ease;
         }
 
-        .skill-tag:hover {
-            border-color: #c084fc;
-            background: rgba(192, 132, 252, 0.05);
+        .skill-badge:hover {
+            background: #6c5ce7;
+            color: #ffffff;
+            border-color: #6c5ce7;
+            transform: scale(1.05);
         }
 
         /* Contact Section */
         .contact-box {
-            background: var(--accent-gradient);
-            padding: 5rem 2rem;
-            border-radius: 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #f1f2f6;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(129, 140, 248, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 2.5rem;
-            background: #fff;
-            color: #000;
-            padding: 1.2rem 3rem;
-            border-radius: 100px;
-            text-decoration: none;
+        .contact-box p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .email-link {
+            font-size: 18px;
             font-weight: 700;
-            font-size: 1rem;
-            transition: transform 0.3s;
+            color: #6c5ce7;
+            text-decoration: none;
+            border-bottom: 2px solid #6c5ce7;
+            padding-bottom: 3px;
+            transition: opacity 0.3s;
         }
 
-        .btn:hover {
-            transform: scale(1.05);
+        .email-link:hover {
+            opacity: 0.8;
         }
 
+        /* Footer */
         footer {
+            background: #1a1a1a;
+            color: #ffffff;
             text-align: center;
-            padding: 4rem;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            padding: 40px 20px;
+            margin-top: 80px;
         }
 
+        footer p {
+            font-size: 13px;
+            opacity: 0.6;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            header { padding: 0 5%; }
-            section { padding: 80px 5%; }
             .nav-links { display: none; }
+            .hero h1 { font-size: 34px; }
+            .hero p { font-size: 16px; }
+            section { padding: 70px 20px; }
+            .about-box, .contact-box { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">YEON SEOROH.</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <header>
-        <span class="major-badge">Art Student @ Sungkyunkwan University</span>
-        <h1>Yeonseoroh</h1>
-        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px;">Blending artistic intuition with big data to shape the future of the fashion industry.</p>
+        <nav class="nav-container">
+            <a href="#" class="logo">YEONSEO ROH</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <div class="hero">
+        <h1>Creative Visionary</h1>
+        <p>Connecting the threads of design, consumer behavior, and data analytics.</p>
+    </div>
 
     <section id="about">
         <h2>About Me</h2>
-        <div class="about-content">
-            <p>I am a creative researcher and art student at SKKU with a deep focus on Fashion Show production and industry analytics. I specialize in bridging the gap between high-fashion aesthetics and data-driven insights, ensuring that artistic vision is backed by market intelligence.</p>
+        <div class="about-box">
+            <span class="major-badge">Clothing & Textiles @ SKKU</span>
+            <p>Hello, I am Yeonseo Roh, a student majoring in Clothing & Textiles at Sungkyunkwan University (SKKU). Welcome to my personal homepage!</p>
+            <p>I focus on exploring the intersection of fashion aesthetics and structural data analysis. By combining creative insight with functional web tools, I aim to transform trend paradigms into concrete, user-centric visual experiences.</p>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Selected Works</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <span class="project-tag">Data Hub</span>
-                <h3>Fashion Industry Dashboard</h3>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">An interactive Streamlit dashboard built to track global runway trends, sustainability metrics, and historical costume influences through quantitative analysis.</p>
-                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 0.8rem; border-bottom: 2px solid #818cf8;">DISCOVER PROJECT</a>
-            </div>
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
             
             <div class="project-card">
-                <span class="project-tag">Research</span>
-                <h3>Aesthetic DNA Analysis</h3>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">A comparative study on Qing Dynasty costume symbolism and its modern reinterpretation in luxury haute couture collections.</p>
-                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 0.8rem; border-bottom: 2px solid #818cf8;">LEARN MORE</a>
+                <div class="project-info">
+                    <h3>Fashion Tech & Trend Analytics</h3>
+                    <p>Designed and deployed interactive web dashboards to map evolving fashion collections, monitor fabric metrics, and forecast seasonal consumer shifts using robust framework streaming applications.</p>
+                    <div class="tag-group">
+                        <span class="tag">Python</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Data Hub</span>
+                    </div>
+                </div>
             </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Visual & Historical Costume Archive</h3>
+                    <p>Conducted extensive comparative research on traditional aesthetics, translating historical and visual garment narratives into digital content structures for targeted marketing and trend insights.</p>
+                    <div class="tag-group">
+                        <span class="tag">Trend Research</span>
+                        <span class="tag">Brand Psychology</span>
+                        <span class="tag">Design Archive</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="skills">
-        <h2>Tech & Creative Stack</h2>
+        <h2>Skills & Tools</h2>
         <div class="skills-container">
-            <div class="skill-tag">Python (Streamlit)</div>
-            <div class="skill-tag">Big Data Visualization</div>
-            <div class="skill-tag">Fashion Trend Casting</div>
-            <div class="skill-tag">Historical Costume Research</div>
-            <div class="skill-tag">Marketing Psychology</div>
-            <div class="skill-tag">UX/UI Design</div>
+            <div class="skill-badge">Fashion Design & Styling</div>
+            <div class="skill-badge">Python</div>
+            <div class="skill-badge">Streamlit Dashboard</div>
+            <div class="skill-badge">Trend Clustering</div>
+            <div class="skill-badge">Consumer Behavior Analysis</div>
+            <div class="skill-badge">HTML / CSS</div>
         </div>
     </section>
 
     <section id="contact">
+        <h2>Contact</h2>
         <div class="contact-box">
-            <h2 style="margin-bottom: 1rem; color: #fff;">Build the Future</h2>
-            <p style="color: rgba(255,255,255,0.9);">Ready to collaborate on the next wave of fashion innovation?</p>
-            <a href="mailto:your-email@skku.edu" class="btn">Get In Touch</a>
+            <p>If you would like to collaborate or have any questions, feel free to reach out via email!</p>
+            <a href="mailto:your-email@example.com" class="email-link">your-email@example.com</a>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Yeonseoroh. Built for Art & Big Data @ SKKU.
+        <p>&copy; 2026 Yeonseo Roh. All rights reserved.</p>
     </footer>
 
 </body>
