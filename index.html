@@ -75,7 +75,7 @@
 
         /* Hero Section with Beautiful Modern Gradient */
         .hero {
-            height: 75vh;
+            height: 60vh;
             background: linear-gradient(135deg, #f6f8fd 0%, #e3e8f8 50%, #dbe3f9 100%);
             display: flex;
             flex-direction: column;
@@ -87,7 +87,7 @@
         }
 
         .hero h1 {
-            font-size: 46px;
+            font-size: 48px;
             color: #1a1a1a;
             margin-bottom: 15px;
             letter-spacing: -1px;
@@ -95,7 +95,7 @@
         }
 
         .hero p {
-            font-size: 19px;
+            font-size: 20px;
             color: #5c6b73;
             font-weight: 400;
             max-width: 600px;
@@ -149,7 +149,7 @@
         /* Projects Section */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 35px;
         }
 
@@ -169,16 +169,29 @@
             box-shadow: 0 15px 35px rgba(108, 92, 231, 0.08);
         }
 
+        .project-photo {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+
+        .project-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .project-info {
-            padding: 35px;
+            padding: 30px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .project-info h3 {
-            font-size: 21px;
-            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 12px;
             color: #1a1a1a;
             font-weight: 700;
         }
@@ -186,7 +199,7 @@
         .project-info p {
             color: #666;
             font-size: 14px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             line-height: 1.6;
         }
 
@@ -206,7 +219,7 @@
             margin-bottom: 6px;
         }
 
-        /* Coursework Section (Newly Added) */
+        /* Coursework Section */
         .course-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -255,7 +268,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -276,6 +289,36 @@
             color: #ffffff;
             border-color: #6c5ce7;
             transform: scale(1.05);
+        }
+
+        /* === Hobby Section (Newly Added) === */
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hobby-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #f1f2f6;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.01);
+        }
+
+        .hobby-card .icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hobby-card h4 {
+            font-size: 15px;
+            color: #2c3e50;
+            font-weight: 600;
         }
 
         /* Contact Section */
@@ -328,7 +371,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 34px; }
+            .hero h1 { font-size: 36px; }
             .hero p { font-size: 16px; }
             section { padding: 70px 20px; }
             .about-box, .contact-box { padding: 30px 20px; }
@@ -345,6 +388,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#coursework">Coursework</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -369,25 +413,48 @@
         <div class="project-grid">
             
             <div class="project-card">
+                <div class="project-photo">
+                    <img src="hanbok.jpg" alt="Traditional Hanbok Garment Construction">
+                </div>
                 <div class="project-info">
-                    <h3>Fashion Tech & Trend Analytics</h3>
-                    <p>Designed and deployed interactive web dashboards to map evolving fashion collections, monitor fabric metrics, and forecast seasonal consumer shifts using robust streaming frameworks.</p>
+                    <h3>Traditional Hanbok Garment Construction</h3>
+                    <p>An in-depth garment production project focused on the historical pattern drafting, cutting, and sewing of traditional Korean Hanbok, preserving classical aesthetic proportions.</p>
                     <div class="tag-group">
-                        <span class="tag">Python</span>
-                        <span class="tag">Streamlit</span>
-                        <span class="tag">Data Hub</span>
+                        <span class="tag">Hanbok Making</span>
+                        <span class="tag">Pattern Drafting</span>
+                        <span class="tag">Garment Production</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
+                <div class="project-photo">
+                    <img src="sewing_process.jpg" alt="Basic Blouse & Sewing Production Process">
+                </div>
                 <div class="project-info">
-                    <h3>Visual & Historical Costume Archive</h3>
-                    <p>Conducted extensive comparative research on traditional aesthetics, translating historical and visual garment narratives into digital content structures for targeted marketing and trend insights.</p>
+                    <h3>Basic Blouse & Sewing Production Process</h3>
+                    <p>A hands-on technical apparel project involving bust dart variations, sleeve attachment, and precise stitching mechanics to construct a structured fundamental blouse.</p>
                     <div class="tag-group">
-                        <span class="tag">Trend Research</span>
-                        <span class="tag">Brand Psychology</span>
-                        <span class="tag">Design Archive</span>
+                        <span class="tag">Blouse Design</span>
+                        <span class="tag">Sewing Machine</span>
+                        <span class="tag">Technical Stitching</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info-container">
+                    <div class="project-photo">
+                        <img src="moodboard.jpg" alt="Data-Driven Fashion Trend Dashboard">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Data-Driven Fashion Trend Dashboard</h3>
+                    <p><em>(In Progress)</em> An ongoing digital initiative building an interactive Streamlit web hub that integrates aesthetic data, fabric statistics, and seasonal collection tracking.</p>
+                    <div class="tag-group">
+                        <span class="tag">In Progress</span>
+                        <span class="tag">Python & Streamlit</span>
+                        <span class="tag">Trend Tracking</span>
                     </div>
                 </div>
             </div>
@@ -446,6 +513,8 @@
     <section id="skills">
         <h2>Skills & Tools</h2>
         <div class="skills-container">
+            <div class="skill-badge">Sewing Machine</div>
+            <div class="skill-badge">Stitching & Hand Sewing</div>
             <div class="skill-badge">Fashion Design & Styling</div>
             <div class="skill-badge">Python</div>
             <div class="skill-badge">Streamlit Dashboard</div>
@@ -455,11 +524,37 @@
         </div>
     </section>
 
+    <section id="hobbies">
+        <h2>Personal Interests</h2>
+        <div class="hobby-grid">
+            <div class="hobby-card">
+                <span class="icon">🌿</span>
+                <h4>Taking Walks</h4>
+            </div>
+            <div class="hobby-card">
+                <span class="icon">📚</span>
+                <h4>Reading Novels</h4>
+            </div>
+            <div class="hobby-card">
+                <span class="icon">🎬</span>
+                <h4>Watching Movies</h4>
+            </div>
+            <div class="hobby-card">
+                <span class="icon">📺</span>
+                <h4>Watching Dramas</h4>
+            </div>
+            <div class="hobby-card">
+                <span class="icon">☕</span>
+                <h4>Cafe Touring</h4>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <h2>Contact</h2>
         <div class="contact-box">
             <p>If you would like to collaborate or have any questions, feel free to reach out via email!</p>
-            <a href="mailto:rohyeonboo@skku.edu" class="email-link">rohyeonboo@skku.edu</a>
+            <a href="mailto:your-email@example.com" class="email-link">your-email@example.com</a>
         </div>
     </section>
 
