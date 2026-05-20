@@ -73,7 +73,7 @@
             color: #6c5ce7;
         }
 
-        /* Hero Section with Flex Layout (Name & Moodboard Side-by-Side) */
+        /* Hero Section with Flex Layout */
         .hero {
             min-height: 65vh;
             background: linear-gradient(135deg, #f6f8fd 0%, #e3e8f8 50%, #dbe3f9 100%);
@@ -191,11 +191,19 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            text-decoration: none; /* 링크 밑줄 제거 */
+            color: inherit;
         }
 
         .project-card:hover {
             transform: translateY(-7px);
             box-shadow: 0 15px 35px rgba(108, 92, 231, 0.08);
+        }
+
+        /* Streamlit 링크가 걸린 카드에 hover 마우스 포인터 및 효과 추가 */
+        .project-card.clickable-link:hover {
+            border-color: #6c5ce7;
+            cursor: pointer;
         }
 
         .project-photo {
@@ -320,34 +328,91 @@
             transform: scale(1.05);
         }
 
-        /* Hobby Section */
+        /* Hobby Section (Interactive Accordion Styles) */
         .hobby-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .hobby-card {
             background: #ffffff;
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px;
             border: 1px solid #f1f2f6;
-            text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.01);
+            text-align: left;
+            height: fit-content;
         }
 
-        .hobby-card .icon {
-            font-size: 28px;
+        .hobby-card .main-title {
+            font-size: 17px;
+            color: #1a1a1a;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+            outline: none;
+            padding-bottom: 5px;
+        }
+
+        /* 기본 브라우저 화살표 숨기기 및 커스텀 */
+        .hobby-card summary::-webkit-details-marker {
+            display: none;
+        }
+        .hobby-card summary {
+            list-style: none;
+        }
+
+        /* 1차 하위 카테고리 스타일 */
+        .hobby-depth1 {
+            margin-top: 15px;
+            padding-left: 10px;
+            border-left: 2px dashed #e3e8f8;
+        }
+
+        .hobby-depth1 details {
             margin-bottom: 10px;
-            display: block;
         }
 
-        .hobby-card h4 {
-            font-size: 15px;
-            color: #2c3e50;
+        .hobby-depth1 summary {
+            font-size: 14px;
             font-weight: 600;
+            color: #4a4a4a;
+            cursor: pointer;
+            padding: 3px 0;
+            outline: none;
+        }
+
+        .hobby-depth1 summary:hover {
+            color: #6c5ce7;
+        }
+
+        /* 2차 최종 불릿 리스트 스타일 */
+        .hobby-bullet-list {
+            list-style-type: none;
+            padding-left: 15px;
+            margin-top: 5px;
+        }
+
+        .hobby-bullet-list li {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .hobby-bullet-list li::before {
+            content: "◦";
+            color: #6c5ce7;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
         /* Contact Section */
@@ -408,6 +473,7 @@
             .hero-moodboard { width: 260px; height: 260px; }
             section { padding: 70px 20px; }
             .about-box, .contact-box { padding: 30px 20px; }
+            .hobby-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -482,17 +548,17 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <a href="https://share.streamlit.io/" target="_blank" class="project-card clickable-link">
                 <div class="project-info">
-                    <h3>Data-Driven Fashion Trend Dashboard</h3>
-                    <p><em>(In Progress)</em> An ongoing digital initiative building an interactive Streamlit web hub that integrates aesthetic data, fabric statistics, and seasonal collection tracking.</p>
+                    <h3>Data-Driven Fashion Trend Dashboard ↗</h3>
+                    <p><em>(In Progress)</em> An interactive Streamlit web hub that integrates aesthetic data, fabric statistics, and seasonal collection tracking. Click here to explore the live dashboard app.</p>
                     <div class="tag-group">
-                        <span class="tag">In Progress</span>
+                        <span class="tag">Live App</span>
                         <span class="tag">Python & Streamlit</span>
                         <span class="tag">Trend Tracking</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
         </div>
     </section>
@@ -562,26 +628,136 @@
     <section id="hobbies">
         <h2>Personal Interests</h2>
         <div class="hobby-grid">
+            
             <div class="hobby-card">
-                <span class="icon">🌿</span>
-                <h4>Taking Walks</h4>
+                <details>
+                    <summary class="main-title"><span>🌿</span> Taking Walks</summary>
+                    <div class="hobby-depth1">
+                        <details>
+                            <summary>Han River Park</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Banpo Han River Park</li>
+                                <li>Ttukseom Han River Park</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Parks</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Ilsan Lake Park</li>
+                                <li>Naksan Park</li>
+                                <li>Namsan Park</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Streets</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Garosu-gil</li>
+                                <li>Seongsu-dong</li>
+                                <li>Bukchon Hanok Village</li>
+                                <li>Seochon Village</li>
+                            </ul>
+                        </details>
+                    </div>
+                </details>
             </div>
+
             <div class="hobby-card">
-                <span class="icon">📚</span>
-                <h4>Reading Novels</h4>
+                <details>
+                    <summary class="main-title"><span>📚</span> Reading Books</summary>
+                    <div class="hobby-depth1">
+                        <details>
+                            <summary>Mystery Fiction</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Sherlock Holmes</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Classic Literature</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Demian</li>
+                                <li>Pride and Prejudice</li>
+                                <li>Little Women</li>
+                                <li>Crime and Punishment</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Self-Improvement</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Grit</li>
+                                <li>역행자</li>
+                            </ul>
+                        </details>
+                    </div>
+                </details>
             </div>
+
             <div class="hobby-card">
-                <span class="icon">🎬</span>
-                <h4>Watching Movies</h4>
+                <details>
+                    <summary class="main-title"><span>🎬</span> Watching Movies</summary>
+                    <div class="hobby-depth1">
+                        <details>
+                            <summary>Korean Movies</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Old Boy</li>
+                                <li>Parasite</li>
+                                <li>Once We Were Us</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>American Movies</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>The Truman Show</li>
+                                <li>Oppenheimer</li>
+                                <li>Babylon</li>
+                                <li>The Great Gatsby</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Japanese Movies</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Shoplifters</li>
+                                <li>Our Little Sister (Kukuho)</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Taiwanese Movies</summary>
+                            <ul class="hobby-bullet-list">
+                                <li>Fall in Love at First Kiss</li>
+                                <li>Hear Me</li>
+                            </ul>
+                        </details>
+                    </div>
+                </details>
             </div>
+
             <div class="hobby-card">
-                <span class="icon">📺</span>
-                <h4>Watching Dramas</h4>
+                <details>
+                    <summary class="main-title"><span>📺</span> Watching Dramas</summary>
+                    <div class="hobby-depth1">
+                        <ul class="hobby-bullet-list" style="padding-left: 5px;">
+                            <li>Netflix</li>
+                            <li>Disney+</li>
+                            <li>Tving</li>
+                            <li>Coupang Play</li>
+                        </ul>
+                    </div>
+                </details>
             </div>
+
             <div class="hobby-card">
-                <span class="icon">☕</span>
-                <h4>Cafe Touring</h4>
+                <details>
+                    <summary class="main-title"><span>☕</span> Cafe</summary>
+                    <div class="hobby-depth1">
+                        <ul class="hobby-bullet-list" style="padding-left: 5px;">
+                            <li>Bakery Cafe</li>
+                            <li>Book Cafe</li>
+                            <li>Aqua Cafe</li>
+                            <li>Garden Cafe</li>
+                        </ul>
+                    </div>
+                </details>
             </div>
+
         </div>
     </section>
 
