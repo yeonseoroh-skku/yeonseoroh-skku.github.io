@@ -105,7 +105,7 @@
         section {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 90px 20px;
         }
 
         section h2 {
@@ -206,6 +206,49 @@
             margin-bottom: 6px;
         }
 
+        /* Coursework Section (Newly Added) */
+        .course-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #f1f2f6;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+        }
+
+        .course-card h3 {
+            font-size: 19px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            border-left: 4px solid #6c5ce7;
+            padding-left: 10px;
+        }
+
+        .course-list {
+            list-style-type: none;
+        }
+
+        .course-list li {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .course-list li::before {
+            content: "•";
+            color: #a29bfe;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
         /* Skills Section */
         .skills-container {
             display: flex;
@@ -300,6 +343,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#coursework">Coursework</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -327,7 +371,7 @@
             <div class="project-card">
                 <div class="project-info">
                     <h3>Fashion Tech & Trend Analytics</h3>
-                    <p>Designed and deployed interactive web dashboards to map evolving fashion collections, monitor fabric metrics, and forecast seasonal consumer shifts using robust framework streaming applications.</p>
+                    <p>Designed and deployed interactive web dashboards to map evolving fashion collections, monitor fabric metrics, and forecast seasonal consumer shifts using robust streaming frameworks.</p>
                     <div class="tag-group">
                         <span class="tag">Python</span>
                         <span class="tag">Streamlit</span>
@@ -351,6 +395,54 @@
         </div>
     </section>
 
+    <section id="coursework">
+        <h2>Academic Coursework</h2>
+        <div class="course-container">
+            
+            <div class="course-card">
+                <h3>History of Korean Costume</h3>
+                <ul class="course-list">
+                    <li>Origins of Korean Costume</li>
+                    <li>Accessories and Ornaments of the Three Kingdoms Era</li>
+                    <li>Basic Forms of Three Kingdoms Attire & Features in Koguryo Tomb Murals</li>
+                    <li>The Tomb of King Muryeong & Baekje Attire</li>
+                    <li>Historical Verification of Three Kingdoms Costume</li>
+                    <li>East-West Cultural Exchange in Unified Silla</li>
+                    <li>Costume and Attire of Balhae</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <h3>Fundamental Fashion Design</h3>
+                <ul class="course-list">
+                    <li>Types of Silhouettes</li>
+                    <li>Bust Dart Variations</li>
+                    <li>Skirts & Trousers Construction</li>
+                    <li>Sleeves & Pockets Variations</li>
+                    <li>Gathers & Ruffles Technical Types</li>
+                    <li>Flounces & Trimmings Variations</li>
+                    <li>Colors and Color Combinations</li>
+                    <li>Fabric Surface Treatments</li>
+                    <li>Fabric Structure and Weave Types</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <h3>Fashion Retailing</h3>
+                <ul class="course-list">
+                    <li>The Importance of Visual Merchandising to Stores</li>
+                    <li>The Human Resources Division Structure</li>
+                    <li>Merchandise Distribution and Loss Prevention</li>
+                    <li>Planning and Executing the Purchase</li>
+                    <li>Purchasing in the Global Marketplace</li>
+                    <li>Private Label Importance to the Merchandise Mix</li>
+                    <li>Inventory Pricing Strategies</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
     <section id="skills">
         <h2>Skills & Tools</h2>
         <div class="skills-container">
@@ -367,7 +459,7 @@
         <h2>Contact</h2>
         <div class="contact-box">
             <p>If you would like to collaborate or have any questions, feel free to reach out via email!</p>
-            <a href="mailto:your-email@example.com" class="email-link">your-email@example.com</a>
+            <a href="mailto:rohyeonboo@skku.edu" class="email-link">your-email@example.com</a>
         </div>
     </section>
 
